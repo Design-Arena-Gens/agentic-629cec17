@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background-primary: #050505;
+  --background-secondary: #0f0f10;
+  --foreground-primary: #f3f4f6;
+  --foreground-muted: #9ca3af;
+  --silver: #c0c5d0;
+  --accent: #7f8cff;
+}
+
+@theme inline {
+  --color-background: var(--background-primary);
+  --color-foreground: var(--foreground-primary);
+  --color-muted: var(--foreground-muted);
+  --color-silver: var(--silver);
+  --font-sans: var(--font-montserrat);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(148, 163, 184, 0.08),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(148, 163, 184, 0.06),
+      transparent 52%
+    ),
+    linear-gradient(130deg, #050505 10%, #0f0f10 90%);
+  color: var(--foreground-primary);
+  font-family: var(--font-montserrat), system-ui, -apple-system, sans-serif;
+}
+
+.bg-grid {
+  position: relative;
+  min-height: 100vh;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.bg-radial-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+      circle at 50% 0%,
+      rgba(148, 163, 184, 0.18),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 0% 50%,
+      rgba(148, 163, 184, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 100% 50%,
+      rgba(148, 163, 184, 0.1),
+      transparent 55%
+    );
+  z-index: 0;
+}
+
+.glass-panel {
+  background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(18px);
+  border-radius: 24px;
+}
